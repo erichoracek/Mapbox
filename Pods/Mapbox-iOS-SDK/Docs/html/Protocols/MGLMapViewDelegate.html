@@ -11,7 +11,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">Mapbox iOS SDK 2.1.2 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">Mapbox iOS SDK 3.0.0 </a></h1>
 				<a id="developerHome" href="../index.html">Mapbox</a>
 			</div>
 			
@@ -45,11 +45,17 @@
 	
 	<option value="//api/name/mapView:alphaForShapeAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:alphaForShapeAnnotation:</option>
 	
+	<option value="//api/name/mapView:annotation:calloutAccessoryControlTapped:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:annotation:calloutAccessoryControlTapped:</option>
+	
 	<option value="//api/name/mapView:annotationCanShowCallout:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:annotationCanShowCallout:</option>
 	
 	<option value="//api/name/mapView:didChangeUserTrackingMode:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeUserTrackingMode:animated:</option>
 	
+	<option value="//api/name/mapView:didDeselectAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didDeselectAnnotation:</option>
+	
 	<option value="//api/name/mapView:didFailToLocateUserWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLocateUserWithError:</option>
+	
+	<option value="//api/name/mapView:didSelectAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didSelectAnnotation:</option>
 	
 	<option value="//api/name/mapView:didUpdateUserLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didUpdateUserLocation:</option>
 	
@@ -69,9 +75,15 @@
 	
 	<option value="//api/name/mapView:strokeColorForShapeAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:strokeColorForShapeAnnotation:</option>
 	
+	<option value="//api/name/mapView:tapOnCalloutForAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:tapOnCalloutForAnnotation:</option>
+	
+	<option value="//api/name/mapViewDidFinishLoadingMap:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewDidFinishLoadingMap:</option>
+	
 	<option value="//api/name/mapViewDidStopLocatingUser:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewDidStopLocatingUser:</option>
 	
 	<option value="//api/name/mapViewRegionIsChanging:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewRegionIsChanging:</option>
+	
+	<option value="//api/name/mapViewWillStartLoadingMap:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewWillStartLoadingMap:</option>
 	
 	<option value="//api/name/mapViewWillStartLocatingUser:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewWillStartLocatingUser:</option>
 	
@@ -91,9 +103,17 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Responding to Map Position Changes">Responding to Map Position Changes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading the Map">Loading the Map</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking User Location">Tracking User Location</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing the Display of Annotations">Managing the Display of Annotations</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking the User Location">Tracking the User Location</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Annotations">Managing Annotations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Selecting Annotations">Selecting Annotations</a></span></li>
 	
 </ul></li>
 
@@ -109,11 +129,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:alphaForShapeAnnotation:">mapView:alphaForShapeAnnotation:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:annotation:calloutAccessoryControlTapped:">mapView:annotation:calloutAccessoryControlTapped:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:annotationCanShowCallout:">mapView:annotationCanShowCallout:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeUserTrackingMode:animated:">mapView:didChangeUserTrackingMode:animated:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didDeselectAnnotation:">mapView:didDeselectAnnotation:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLocateUserWithError:">mapView:didFailToLocateUserWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didSelectAnnotation:">mapView:didSelectAnnotation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didUpdateUserLocation:">mapView:didUpdateUserLocation:</a></span></li>
 	
@@ -133,9 +159,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:strokeColorForShapeAnnotation:">mapView:strokeColorForShapeAnnotation:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:tapOnCalloutForAnnotation:">mapView:tapOnCalloutForAnnotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewDidFinishLoadingMap:">mapViewDidFinishLoadingMap:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewDidStopLocatingUser:">mapViewDidStopLocatingUser:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewRegionIsChanging:">mapViewRegionIsChanging:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewWillStartLoadingMap:">mapViewWillStartLoadingMap:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewWillStartLocatingUser:">mapViewWillStartLocatingUser:</a></span></li>
 	
@@ -186,6 +218,90 @@
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Responding to Map Position Changes" name="task_Responding to Map Position Changes"></a>
+						<h3 class="subsubtitle task-title">Responding to Map Position Changes</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:regionWillChangeAnimated:">&ndash;&nbsp;mapView:regionWillChangeAnimated:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewRegionIsChanging:">&ndash;&nbsp;mapViewRegionIsChanging:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:regionDidChangeAnimated:">&ndash;&nbsp;mapView:regionDidChangeAnimated:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Loading the Map" name="task_Loading the Map"></a>
+						<h3 class="subsubtitle task-title">Loading the Map</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewWillStartLoadingMap:">&ndash;&nbsp;mapViewWillStartLoadingMap:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewDidFinishLoadingMap:">&ndash;&nbsp;mapViewDidFinishLoadingMap:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Tracking User Location" name="task_Tracking User Location"></a>
+						<h3 class="subsubtitle task-title">Tracking User Location</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewWillStartLocatingUser:">&ndash;&nbsp;mapViewWillStartLocatingUser:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewDidStopLocatingUser:">&ndash;&nbsp;mapViewDidStopLocatingUser:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didUpdateUserLocation:">&ndash;&nbsp;mapView:didUpdateUserLocation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didFailToLocateUserWithError:">&ndash;&nbsp;mapView:didFailToLocateUserWithError:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didChangeUserTrackingMode:animated:">&ndash;&nbsp;mapView:didChangeUserTrackingMode:animated:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
 						
 						
 						<a title="Managing the Display of Annotations" name="task_Managing the Display of Annotations"></a>
@@ -240,21 +356,23 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Managing Annotations" name="task_Managing Annotations"></a>
+						<h3 class="subsubtitle task-title">Managing Annotations</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:regionWillChangeAnimated:">&ndash;&nbsp;mapView:regionWillChangeAnimated:</a></code>
+		<code><a href="#//api/name/mapView:annotation:calloutAccessoryControlTapped:">&ndash;&nbsp;mapView:annotation:calloutAccessoryControlTapped:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapViewRegionIsChanging:">&ndash;&nbsp;mapViewRegionIsChanging:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:regionDidChangeAnimated:">&ndash;&nbsp;mapView:regionDidChangeAnimated:</a></code>
+		<code><a href="#//api/name/mapView:tapOnCalloutForAnnotation:">&ndash;&nbsp;mapView:tapOnCalloutForAnnotation:</a></code>
 	</span>
 	
 	
@@ -262,37 +380,19 @@
 						</ul>
 						
 						
-						<a title="Tracking the User Location" name="task_Tracking the User Location"></a>
-						<h3 class="subsubtitle task-title">Tracking the User Location</h3>
+						<a title="Selecting Annotations" name="task_Selecting Annotations"></a>
+						<h3 class="subsubtitle task-title">Selecting Annotations</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapViewWillStartLocatingUser:">&ndash;&nbsp;mapViewWillStartLocatingUser:</a></code>
+		<code><a href="#//api/name/mapView:didSelectAnnotation:">&ndash;&nbsp;mapView:didSelectAnnotation:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapViewDidStopLocatingUser:">&ndash;&nbsp;mapViewDidStopLocatingUser:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didUpdateUserLocation:">&ndash;&nbsp;mapView:didUpdateUserLocation:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didFailToLocateUserWithError:">&ndash;&nbsp;mapView:didFailToLocateUserWithError:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didChangeUserTrackingMode:animated:">&ndash;&nbsp;mapView:didChangeUserTrackingMode:animated:</a></code>
+		<code><a href="#//api/name/mapView:didDeselectAnnotation:">&ndash;&nbsp;mapView:didDeselectAnnotation:</a></code>
 	</span>
 	
 	
@@ -358,6 +458,71 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Returns the alpha value to use when rendering a shape annotation. Defaults to <code>1.0</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:annotation:calloutAccessoryControlTapped:" title="mapView:annotation:calloutAccessoryControlTapped:"></a>
+	<h3 class="subsubtitle method-title">mapView:annotation:calloutAccessoryControlTapped:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the user tapped one of the annotation&rsquo;s accessory buttons.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MGLMapView *)<em>mapView</em> annotation:(id&lt;MGLAnnotation&gt;)<em>annotation</em> calloutAccessoryControlTapped:(UIControl *)<em>control</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the specified annotation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>The annotation whose button was tapped.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>control</em></dt>
+			<dd><p>The control that was tapped.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the user tapped one of the annotation&rsquo;s accessory buttons.</p>
+
+<p>Accessory views contain custom content and are positioned on either side of the annotation title text. If a view you specify is a descendant of the <code>UIControl</code> class, the map view calls this method as a convenience whenever the user taps your view. You can use this method to respond to taps and perform any actions associated with that control. For example, if your control displayed additional information about the annotation, you could use this method to present a modal panel with that information.</p>
+
+<p>If your custom accessory views are not descendants of the <code>UIControl</code> class, the map view does not call this method.</p>
 	</div>
 	
 	
@@ -503,6 +668,64 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapView:didDeselectAnnotation:" title="mapView:didDeselectAnnotation:"></a>
+	<h3 class="subsubtitle method-title">mapView:didDeselectAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that one of its annotations was deselected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MGLMapView *)<em>mapView</em> didDeselectAnnotation:(id&lt;MGLAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the annotation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>The annotation that was deselected.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that one of its annotations was deselected.</p>
+
+<p>You can use this method to track changes in the selection state of annotations.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapView:didFailToLocateUserWithError:" title="mapView:didFailToLocateUserWithError:"></a>
 	<h3 class="subsubtitle method-title">mapView:didFailToLocateUserWithError:</h3>
 	
@@ -542,6 +765,64 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Tells the delegate that an attempt to locate the user’s position failed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:didSelectAnnotation:" title="mapView:didSelectAnnotation:"></a>
+	<h3 class="subsubtitle method-title">mapView:didSelectAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that one of its annotations was selected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MGLMapView *)<em>mapView</em> didSelectAnnotation:(id&lt;MGLAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the annotation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>The annotation that was selected.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that one of its annotations was selected.</p>
+
+<p>You can use this method to track changes in the selection state of annotations.</p>
 	</div>
 	
 	
@@ -1109,6 +1390,115 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapView:tapOnCalloutForAnnotation:" title="mapView:tapOnCalloutForAnnotation:"></a>
+	<h3 class="subsubtitle method-title">mapView:tapOnCalloutForAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the user tapped on an annotation&rsquo;s callout view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MGLMapView *)<em>mapView</em> tapOnCalloutForAnnotation:(id&lt;MGLAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the specified annotation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>The annotation whose callout was tapped.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the user tapped on an annotation&rsquo;s callout view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapViewDidFinishLoadingMap:" title="mapViewDidFinishLoadingMap:"></a>
+	<h3 class="subsubtitle method-title">mapViewDidFinishLoadingMap:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the map view has finished loading.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapViewDidFinishLoadingMap:(MGLMapView *)<em>mapView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view that has finished loading.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the map view has finished loading.</p>
+
+<p>This method is called whenever the map view finishes loading, either after the initial load or after a style change has forced a reload.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapViewDidStopLocatingUser:" title="mapViewDidStopLocatingUser:"></a>
 	<h3 class="subsubtitle method-title">mapViewDidStopLocatingUser:</h3>
 	
@@ -1215,6 +1605,59 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapViewWillStartLoadingMap:" title="mapViewWillStartLoadingMap:"></a>
+	<h3 class="subsubtitle method-title">mapViewWillStartLoadingMap:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the map view will begin to load.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapViewWillStartLoadingMap:(MGLMapView *)<em>mapView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view that is starting to load.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the map view will begin to load.</p>
+
+<p>This method is called whenever the map view starts loading, including when a new style has been set and the map must reload.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MGLMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapViewWillStartLocatingUser:" title="mapViewWillStartLocatingUser:"></a>
 	<h3 class="subsubtitle method-title">mapViewWillStartLocatingUser:</h3>
 	
@@ -1282,7 +1725,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Mapbox. All rights reserved. (Last updated: 2015-09-15)</span><br />
+						<p><span class="copyright">&copy; 2015 Mapbox. All rights reserved. (Last updated: 2015-11-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
