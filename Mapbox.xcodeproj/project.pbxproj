@@ -59,8 +59,8 @@
 				E49374111C90C8FA00A94596 /* Frameworks */,
 				E49374121C90C8FA00A94596 /* Headers */,
 				E49374131C90C8FA00A94596 /* Resources */,
-				E49374231C90D37000A94596 /* ShellScript */,
-				E49374241C90D61B00A94596 /* ShellScript */,
+				E49374231C90D37000A94596 /* Replace Framework */,
+				E49374241C90D61B00A94596 /* Strip Invalid Architectures */,
 			);
 			buildRules = (
 			);
@@ -113,20 +113,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E49374231C90D37000A94596 /* ShellScript */ = {
+		E49374231C90D37000A94596 /* Replace Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Replace Framework";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "rm -rf $BUILT_PRODUCTS_DIR/Mapbox.framework\ncp -R Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework $BUILT_PRODUCTS_DIR";
 		};
-		E49374241C90D61B00A94596 /* ShellScript */ = {
+		E49374241C90D61B00A94596 /* Strip Invalid Architectures */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,11 +135,12 @@
 			inputPaths = (
 				$BUILT_PRODUCTS_DIR/Mapbox.framework,
 			);
+			name = "Strip Invalid Architectures";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Signs a framework with the provided identity\ncode_sign() {\n    # Use the current code_sign_identitiy\n    echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n    echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\necho \"Stripping frameworks\"\ncd \"${BUILT_PRODUCTS_DIR}\"\n\nfor file in $(find . -type f -perm +111); do\n# Skip non-dynamic libraries\nif ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\ncontinue\nfi\n# Get architectures for current file\narchs=\"$(lipo -info \"${file}\" | rev | cut -d ':' -f1 | rev)\"\nstripped=\"\"\nfor arch in $archs; do\nif ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\n# Strip non-valid architectures in-place\nlipo -remove \"$arch\" -output \"$file\" \"$file\" || exit 1\nstripped=\"$stripped $arch\"\nfi\ndone\nif [[ \"$stripped\" != \"\" ]]; then\necho \"Stripped $file of architectures:$stripped\"\nif [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\ncode_sign \"${file}\"\nfi\nfi\ndone";
+			shellScript = "# This script strips all non-valid architectures from dynamic libraries in\n# the build output directory.\n#\n# This is required since the framework is being replaced\n# with a fat binary in the previous run script, otherwise carthage\n# would fail during its fat binary creation phase due to similar\n# architectures.\n#\n#\n# The following environment variables are required:\n#\n# BUILT_PRODUCTS_DIR\n# VALID_ARCHS\n# EXPANDED_CODE_SIGN_IDENTITY\n\n\n# Signs a framework with the provided identity\ncode_sign() {\n    # Use the current code_sign_identitiy\n    echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n    echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\necho \"Stripping frameworks\"\ncd \"${BUILT_PRODUCTS_DIR}\"\n\nfor file in $(find . -type f -perm +111); do\n    # Skip non-dynamic libraries\n    if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n        continue\n    fi\n    # Get architectures for current file\n    archs=\"$(lipo -info \"${file}\" | rev | cut -d ':' -f1 | rev)\"\n    stripped=\"\"\n    for arch in $archs; do\n        if ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\n            # Strip non-valid architectures in-place\n            lipo -remove \"$arch\" -output \"$file\" \"$file\" || exit 1\n            stripped=\"$stripped $arch\"\n        fi\n    done\n    if [[ \"$stripped\" != \"\" ]]; then\n        echo \"Stripped $file of architectures:$stripped\"\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n            code_sign \"${file}\"\n        fi\n    fi\ndone";
 		};
 /* End PBXShellScriptBuildPhase section */
 
