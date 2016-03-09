@@ -26,7 +26,6 @@
 			isa = PBXGroup;
 			children = (
 				E49374211C90C94500A94596 /* Mapbox.framework */,
-				E49374171C90C8FA00A94596 /* Mapbox */,
 				E49374161C90C8FA00A94596 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -37,13 +36,6 @@
 				E49374151C90C8FA00A94596 /* Mapbox.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E49374171C90C8FA00A94596 /* Mapbox */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mapbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
