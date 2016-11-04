@@ -5,23 +5,13 @@
 	<key>files</key>
 	<dict>
 		<key>Base.lproj/Foundation.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Imm8P0lptMC2dq8sfHh76vxhlsc=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
+		<data>
+		Imm8P0lptMC2dq8sfHh76vxhlsc=
+		</data>
 		<key>Base.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			b0rUKa8MgLJ9EyIkEq9Eg2uJFeM=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
+		<data>
+		b0rUKa8MgLJ9EyIkEq9Eg2uJFeM=
+		</data>
 		<key>Compass.png</key>
 		<data>
 		9fgD3C9O8JnY6gjx+mG7bdTFBG0=
@@ -160,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cMunpMODv9ckYoDJbM++ESAvgig=
+		SVuc7TDutX+KfS+nKYG/hclTfm0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -241,8 +231,6 @@
 			<data>
 			XMleRTbRkM+Ao8pz4qr2+xl4Da+39GmffAsi1GQfEjQ=
 			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 		<key>Base.lproj/Localizable.strings</key>
 		<dict>
@@ -254,8 +242,6 @@
 			<data>
 			aUC97TfxxN9lfcz9Fuu/TjMGXSCAIsw4nx7+Bm/Arvg=
 			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 		<key>Compass.png</key>
 		<dict>
@@ -808,6 +794,11 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>
@@ -852,6 +843,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>
